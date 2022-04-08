@@ -18,6 +18,7 @@
   "homepage": "https://github.com/PatrickRallings/weatherApp#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "random-zipcode": "^1.0.2"
   }
 }

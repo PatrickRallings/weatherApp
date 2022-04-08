@@ -1,5 +1,6 @@
 body {
-  background: linear-gradient(to bottom, #2196f3, #f44336);
+  background-color: #bdd4e7;
+  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);  
   font-family: serif;
 }
 #navCont {
@@ -10,7 +11,7 @@ body {
   height: 100px;
   padding-top: 25px;
   margin-bottom: 75px;
-  border-bottom: 3px double rgb(160, 86, 86);
+  border-bottom: 3px double black;
 }
 h1 {
   font-size: 50px;
@@ -38,7 +39,7 @@ h1 {
   width: 75%;
   height: 100px;
   margin-top: 30px;
-  border: 2px solid #c9535c;
+  border: 2px solid black;
   border-radius: 25px;
   background: linear-gradient(to bottom, #141e30, #243b55);
 }
@@ -52,7 +53,8 @@ h1 {
     width: 75%;
     height: fit-content;
     margin-top: 30px;
-    border: 2px solid #c9535c;
+    margin-bottom: 100px;
+    border: 2px solid black;
     border-radius: 25px;
     background: linear-gradient(to bottom, #141e30, #243b55);
 }
@@ -86,18 +88,41 @@ h1 {
   transition: 0.5s;
   background-size: 200% auto;
 }
-.tempData {
-  display: flex;
-  flex-direction: column;
+.col-6 {
+text-align: center;
+}
+h4 {
+  margin-top: 10px
+}
+h5 {
+  margin: 10px;
+}
+hr {
+  margin: 3px;
 }
 .tempCont {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   margin: 20px;
   width: 100%;
+  height: 20%;
   text-align: center;
-  /* border: 2px solid black */
+  justify-content: space-evenly;
+}
+.tempNumCont {
+  width: 40%;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+.tempExtraNumCont {
+  width: 30%;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+.tempExtraCont {
+  margin: 0;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  justify-content: space-evenly;
 }
 #tempActual {
     color: aliceblue;
@@ -116,7 +141,7 @@ footer {
   width: 100%;
   height: 75px;
   background: linear-gradient(to bottom, #141e30, #243b55);
-  border-top: 3px double rgb(158, 10, 10);
+  border-top: 3px double black;
   color: aliceblue;
   text-align: center;
   padding-top: 10px;
@@ -131,5 +156,7 @@ footer {
 button:hover {
     background-position: right center;
     box-shadow: 0 0 12px #eee;
-    /* transform: scale(1.1); */
+}
+button:active {
+  transform: scale(1.1);
 }
