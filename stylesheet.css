@@ -10,11 +10,39 @@ body {
   color: aliceblue;
   height: 100px;
   padding-top: 25px;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
   border-bottom: 3px double black;
 }
 h1 {
   font-size: 50px;
+}
+h2 {
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 42px;
+}
+h3 {
+  font-size: 35px;
+  margin-left: 10px;
+}
+h4 {
+  margin-top: 10px
+}
+h5 {
+  margin: 10px;
+}
+hr {
+  margin: 3px;
+}
+input{
+  background: transparent;
+  font-size: 21px;
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+  width: fit-content;
+  letter-spacing: .05em;
+  padding-left: 5px;
 }
 #appCont {
   display: flex;
@@ -32,13 +60,14 @@ h1 {
 #appTop {
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 35px black;
   justify-content: space-evenly;
   align-items: center;
   color:aliceblue;
   padding: 10px;
   width: 75%;
+  min-width: fit-content;
   height: 100px;
-  margin-top: 30px;
   border: 2px solid black;
   border-radius: 25px;
   background: linear-gradient(to bottom, #141e30, #243b55);
@@ -46,6 +75,7 @@ h1 {
 #appBottom {
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 35px black;
     /* justify-content: space-evenly; */
     align-items: center;
     color:aliceblue;
@@ -56,7 +86,11 @@ h1 {
     margin-bottom: 100px;
     border: 2px solid black;
     border-radius: 25px;
-    background: linear-gradient(to bottom, #141e30, #243b55);
+    background-image: url(http://68.media.tumblr.com/55ab69e8654f7b40c0f6855c8ca22961/tumblr_omjk2lVUt31tliyzbo1_540.gif);
+    background-size: cover;
+    /* background: linear-gradient(to bottom, #141e30, #243b55); */
+}
+.infoCont {    background: linear-gradient(to bottom, #141e30, #243b55)
 }
 .searchBtn {
   width: 100px;
@@ -88,17 +122,11 @@ h1 {
   transition: 0.5s;
   background-size: 200% auto;
 }
+#currentTemp {
+  font-size: 50px;
+}
 .col-6 {
 text-align: center;
-}
-h4 {
-  margin-top: 10px
-}
-h5 {
-  margin: 10px;
-}
-hr {
-  margin: 3px;
 }
 .tempCont {
   margin: 20px;
@@ -108,12 +136,14 @@ hr {
   justify-content: space-evenly;
 }
 .tempNumCont {
-  width: 40%;
+  width: fit-content;
+  margin: 5px;
   border: 2px solid white;
   border-radius: 15px;
 }
 .tempExtraNumCont {
-  width: 30%;
+  width: fit-content;
+  margin: 5px;
   border: 2px solid white;
   border-radius: 15px;
 }
@@ -159,4 +189,64 @@ button:hover {
 }
 button:active {
   transform: scale(1.1);
+}
+.card-con
+{
+    font-family: 'Open Sans', sans serif;
+    /* font-size: 120px; */
+    font-weight: bold;
+
+    /* width: 400px;
+    height: 250px; */
+    /* margin: 80px auto; */
+
+    border-radius: 10px;
+
+    perspective: 1400px;
+}
+
+.crd
+{
+    position: relative;
+
+    /* height: 100%;
+
+    border-radius: 10px;
+
+    width: 100%; */
+    transform-style: preserve-3d;
+    /* box-shadow: 0 0 12px; */
+}
+
+.front,
+.back
+{
+    /* display: flex; */
+
+    /* width: 100%;
+    height: 100%; */
+
+    /* border-radius: 10px; */
+
+    /* justify-content: center;
+    align-items: center; */
+    backface-visibility: hidden;
+}
+
+.front
+{
+    color: #fff;
+    /* background: #2196f3; */
+}
+
+.back
+{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+
+    transform: rotateY(180deg);
+
+    /* color: #2196f3;
+    background: #fff; */
 }
