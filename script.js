@@ -111,13 +111,13 @@ const currentFetch = (units, degrees) => {
       console.log(backgroundImg);
       appBottom.style.backgroundImage = `url('${backgroundImg}')`;
       currentTemp.innerHTML =
-        Math.round(json.main.temp) + `<sup style='font-size: 20px;'>${degrees}</sup>`;
+        Math.round(json.main.temp) + `<sup style='font-size: 30px;'>${degrees}</sup>`;
       currentHigh.innerHTML =
         Math.round(json.main.temp_max) +
-        `<sup style='font-size: 15px;'>${degrees}</sup>`;
+        `<sup style='font-size: 20px;'>${degrees}</sup>`;
       currentLow.innerHTML =
         Math.round(json.main.temp_min) +
-        `<sup style='font-size: 15px;'>${degrees}</sup>`;
+        `<sup style='font-size: 20px;'>${degrees}</sup>`;
       document.querySelector(
         "#condition"
       ).src = `https://openweathermap.org/img/wn/${icon}.png`;
@@ -126,7 +126,7 @@ const currentFetch = (units, degrees) => {
       currentHumidity.innerHTML = json.main.humidity + "%";
       currentFeels.innerHTML =
         Math.round(json.main.feels_like) +
-        `<sup style='font-size: 15px;'>${degrees}</sup>`;
+        `<sup style='font-size: 23px;'>${degrees}</sup>`;
       let lat = json.coord.lat;
       let lon = json.coord.lon;
       fetch(
@@ -140,19 +140,19 @@ const currentFetch = (units, degrees) => {
           day3Date.innerHTML = day3Day;
           day1Range.innerHTML = `${Math.round(
             futJson.daily[1].temp.max
-          )}<sup style='font-size: 10px;'>${degrees}</sup> / ${Math.round(
+          )}<sup style='font-size: 12px;'>${degrees}</sup> / ${Math.round(
             futJson.daily[1].temp.min
-          )}<sup style='font-size: 10px;'>${degrees}</sup>`;
+          )}<sup style='font-size: 12px;'>${degrees}</sup>`;
           day2Range.innerHTML = `${Math.round(
             futJson.daily[2].temp.max
-          )}<sup style='font-size: 10px;'>${degrees}</sup> / ${Math.round(
+          )}<sup style='font-size: 12px;'>${degrees}</sup> / ${Math.round(
             futJson.daily[2].temp.min
-          )}<sup style='font-size: 10px;'>${degrees}</sup>`;
+          )}<sup style='font-size: 12px;'>${degrees}</sup>`;
           day3Range.innerHTML = `${Math.round(
             futJson.daily[3].temp.max
-          )}<sup style='font-size: 10px;'>${degrees}</sup> / ${Math.round(
+          )}<sup style='font-size: 12px;'>${degrees}</sup> / ${Math.round(
             futJson.daily[3].temp.min
-          )}<sup style='font-size: 10px;'>${degrees}</sup>`;
+          )}<sup style='font-size: 12px;'>${degrees}</sup>`;
           day1Condition.src = `https://openweathermap.org/img/wn/${futJson.daily[1].weather[0].icon}.png`;
           day1ConditionText.innerHTML = `<em>${futJson.daily[1].weather[0].description}</em>`;
           day2Condition.src = `https://openweathermap.org/img/wn/${futJson.daily[2].weather[0].icon}.png`;
@@ -179,7 +179,7 @@ const flip = (target) => {
   });
 };
 
-currentFetch('imperial', '℉');
+currentFetch('imperial', '&#176');
 
 searchBtn.addEventListener("click", function () {
   flip(crd);
