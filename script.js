@@ -37,7 +37,7 @@ let yyyy = today.getFullYear();
 let d1 = 0 + String(parseInt(dd) + 1);
 let d2 = parseInt(dd) + 2;
 let d3 = parseInt(dd) + 3;
-let time = today.getHours() + ":" + today.getMinutes();
+// let time = today.getHours() + ":" + today.getMinutes();
 
 today = mm + "/" + dd + "/" + yyyy;
 let day1 = mm + "/" + d1;
@@ -82,9 +82,11 @@ const backgroundObj = {
 
 const currentFetchF = () => {
   let cityVal = document.querySelector("input").value;
-  date.innerHTML = `<em>${time} on ${today}</em>`;
-  // degreeBtn.innerHTML = "Switch to &#176C";
-  if (parseInt(cityVal) === Number) {
+  date.innerHTML = `<em>${today}</em>`;
+  if (cityVal === '') {
+    linkVal = `q=Charlotte,us`
+  }
+  else if (parseInt(cityVal) === Number) {
     linkVal = `zip=${cityVal},us`;
   } else {
     linkVal = `q=${cityVal},us`;
@@ -135,25 +137,6 @@ const currentFetchF = () => {
       day3Condition.src = `https://openweathermap.org/img/wn/${futJson.daily[3].weather[0].icon}.png`
       day3ConditionText.innerHTML = `<em>${futJson.daily[3].weather[0].description}</em>`
       });
-    });
-};
-
-const forecastFetch = () => {
-  let cityVal = document.querySelector("input").value;
-  day1Date.innerHTML = day1;
-  day2Date.innerHTML = day2;
-  day3Date.innerHTML = day3;
-  if (parseInt(cityVal) === Number) {
-    linkVal = `zip=${cityVal},us`;
-  } else {
-    linkVal = `q=${cityVal},us`;
-  }
-  fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?${linkVal}&units=imperial&appid=dba94717f4d86654f333b634ebb619f4`
-  )
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
     });
 };
 
