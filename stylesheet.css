@@ -53,6 +53,7 @@ input{
   height: fit-content;
   border-radius: 50px;
   color: #243b55;
+  border: 5px solid;
   /* background: linear-gradient(to bottom, #141e30, #243b55); */
 }
 #appTop {
@@ -221,6 +222,12 @@ button:active {
   }
   #appCont {
     width: 100%;
+  }
+  #appTop {
+    width: 95%;
+  }
+  #appBottom {
+    width: 95%;
   }
   footer {
     display: none;
