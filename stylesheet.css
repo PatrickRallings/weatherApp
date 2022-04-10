@@ -103,12 +103,13 @@ input{
 }
 .infoCont {    background: linear-gradient(to bottom, #141e30, #243b55)
 }
-.searchBtn {
-  width: 100px;
-  height: 30px;
+#searchBtn {
+  width: 125px;
+  height: 40px;
+  font-size: 25px;
   color: aliceblue;
   margin-top: 3px;
-  padding: 5px;
+  /* padding: 8px; */
   background: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
   border: none;
   border-radius: 10px;
@@ -119,19 +120,7 @@ input{
 .alignLeft {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-}
-.weatherBtn {
-  width: 75px;
-  color: aliceblue;
-  padding: 2.5px;
-  margin: 5px 10px;
-  background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
-  border: none;
-  border-radius: 10px;
-  text-align: center;
-  transition: 0.5s;
-  background-size: 200% auto;
+  justify-content: space-evenly;
 }
 #currentTemp {
   font-size: 50px;

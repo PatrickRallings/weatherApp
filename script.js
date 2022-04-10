@@ -1,4 +1,4 @@
-const searchBtn = document.querySelector(".searchBtn");
+const searchBtn = document.querySelector("#searchBtn");
 const appBottom = document.querySelector("#appBottom");
 
 const loc = document.querySelector("#location");
@@ -30,24 +30,24 @@ const day3ConditionText = document.querySelector('#day3ConditionText');
 let crd = document.querySelectorAll(".crd");
 let playing = false;
 
+const week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
 let today = new Date();
+let currentDay = week[today.getDay()]
 let dd = String(today.getDate()).padStart(2, "0");
 let mm = String(today.getMonth() + 1).padStart(2, "0");
 let yyyy = today.getFullYear();
-let d1 = 0 + String(parseInt(dd) + 1);
-let d2 = parseInt(dd) + 2;
-let d3 = parseInt(dd) + 3;
-// let time = today.getHours() + ":" + today.getMinutes();
+
+let day1Day = week[today.getDay()+1]
+let day2Day = week[today.getDay()+2]
+let day3Day = week[today.getDay()+3]
 
 today = mm + "/" + dd + "/" + yyyy;
-let day1 = mm + "/" + d1;
-let day2 = mm + "/" + d2;
-let day3 = mm + "/" + d3;
 
 let linkVal;
 
 const backgroundObj = {
-  "01d": "https://media3.giphy.com/media/VxbvpfaTTo3le/giphy.gif",
+  "01d": "https://img.wattpad.com/dd954c704a777dc1a1f2a948085b7fd888cdd621/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f4d624d55756f67683832624236673d3d2d3739393338303530302e313564316461663930616162633064393139393835343639333537372e676966",
   "01n": "https://thumbs.gfycat.com/ContentJitteryCats-size_restricted.gif",
   "02d":
     "https://bestanimations.com/media/sky/1132213612blue-sky-clouds-gif.gif",
@@ -82,7 +82,7 @@ const backgroundObj = {
 
 const currentFetchF = () => {
   let cityVal = document.querySelector("input").value;
-  date.innerHTML = `<em>${today}</em>`;
+  date.innerHTML = `<em>${currentDay}, ${today}</em>`;
   if (cityVal === '') {
     linkVal = `q=Charlotte,us`
   }
@@ -127,6 +127,9 @@ const currentFetchF = () => {
       .then((response) => response.json())
       .then((futJson) => {
       console.log(futJson);
+      day1Date.innerHTML = day1Day
+      day2Date.innerHTML = day2Day
+      day3Date.innerHTML = day3Day
       day1Range.innerHTML = `${Math.round(futJson.daily[1].temp.max)}<sup style='font-size: 10px;'>℉</sup> / ${Math.round(futJson.daily[1].temp.min)}<sup style='font-size: 10px;'>℉</sup>`
       day2Range.innerHTML = `${Math.round(futJson.daily[2].temp.max)}<sup style='font-size: 10px;'>℉</sup> / ${Math.round(futJson.daily[2].temp.min)}<sup style='font-size: 10px;'>℉</sup>`
       day3Range.innerHTML = `${Math.round(futJson.daily[3].temp.max)}<sup style='font-size: 10px;'>℉</sup> / ${Math.round(futJson.daily[3].temp.min)}<sup style='font-size: 10px;'>℉</sup>`
@@ -162,3 +165,10 @@ searchBtn.addEventListener("click", function () {
   flip(crd);
   setTimeout(currentFetchF, 500);
 });
+
+document.querySelector('input').addEventListener('keyup', function(event) {
+  if (event.key === 'Enter') {
+    console.log('keyup test')
+    document.getElementById('searchBtn').click()
+  }
+})
