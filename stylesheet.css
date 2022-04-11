@@ -261,6 +261,11 @@ button:active {
   transform-style: preserve-3d;
 }
 
+.cont {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
 .front,
 .back {
   backface-visibility: hidden;
