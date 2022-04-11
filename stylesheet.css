@@ -301,6 +301,10 @@ button:active {
     display: none;
   }
 
+#appHead {
+  margin-left: 15px;
+}
+
   #dateDiv {
     display: none;
   }
