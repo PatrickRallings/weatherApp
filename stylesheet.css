@@ -294,4 +294,8 @@ button:active {
   footer {
     display: none;
   }
+
+  #dateDiv {
+    display: none;
+  }
 }
