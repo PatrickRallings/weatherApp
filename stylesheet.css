@@ -1,8 +1,9 @@
 body {
   background-color: #bdd4e7;
-  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);  
+  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
   font-family: serif;
 }
+
 #navCont {
   display: flex;
   justify-content: center;
@@ -13,28 +14,35 @@ body {
   margin-bottom: 50px;
   border-bottom: 3px double black;
 }
+
 h1 {
   font-size: 50px;
 }
+
 h2 {
   margin-top: 15px;
   margin-left: 10px;
   font-size: 42px;
 }
+
 h3 {
   font-size: 35px;
   margin-left: 10px;
 }
+
 h4 {
   margin-top: 10px
 }
+
 h5 {
   margin: 10px;
 }
+
 hr {
   margin: 3px;
 }
-input{
+
+input {
   background: transparent;
   font-size: 21px;
   color: aliceblue;
@@ -44,6 +52,7 @@ input{
   letter-spacing: .05em;
   padding-left: 5px;
 }
+
 #appCont {
   display: flex;
   flex-direction: column;
@@ -55,13 +64,14 @@ input{
   color: #243b55;
   /* background: linear-gradient(to bottom, #141e30, #243b55); */
 }
+
 #appTop {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 35px black;
   justify-content: space-evenly;
   align-items: center;
-  color:aliceblue;
+  color: aliceblue;
   padding: 10px;
   width: 75%;
   min-width: fit-content;
@@ -70,39 +80,45 @@ input{
   border-radius: 25px;
   background: linear-gradient(to bottom, #141e30, #243b55);
 }
+
 #appBottom {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 35px black;
-    align-items: center;
-    color:aliceblue;
-    padding-bottom: 10px;
-    overflow: hidden;
-    width: 75%;
-    height: fit-content;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    border: 2px solid black;
-    border-radius: 25px;
-    background-image: url(http://68.media.tumblr.com/55ab69e8654f7b40c0f6855c8ca22961/tumblr_omjk2lVUt31tliyzbo1_540.gif);
-    background-size: cover;
-    /* background: linear-gradient(to bottom, #141e30, #243b55); */
-}
-#appHead {
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 35px black;
+  align-items: center;
+  color: aliceblue;
+  padding-bottom: 10px;
+  overflow: hidden;
+  width: 75%;
+  height: fit-content;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-image: url(http://68.media.tumblr.com/55ab69e8654f7b40c0f6855c8ca22961/tumblr_omjk2lVUt31tliyzbo1_540.gif);
+  background-size: cover;
+  /* background: linear-gradient(to bottom, #141e30, #243b55); */
+}
+
+#appHead {
+  display: flex;
+  flex-direction: row;
   box-shadow: 0 0 10px black;
   justify-content: space-evenly;
   align-items: center;
-  color:aliceblue;
+  color: aliceblue;
   width: 100%;
   margin: 0;
+  padding-top: 10px;
   padding-bottom: 5px;
   border-bottom: 2px solid black;
   background: linear-gradient(to bottom, #141e30, #243b55);
 }
-.infoCont {    background: linear-gradient(to bottom, #141e30, #243b55)
+
+.infoCont {
+  background: linear-gradient(to bottom, #141e30, #243b55)
 }
+
 #searchBtn {
   width: 125px;
   height: 40px;
@@ -110,24 +126,58 @@ input{
   color: aliceblue;
   margin-top: 3px;
   /* padding: 8px; */
-  background: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+  background: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
   border: none;
   border-radius: 10px;
   text-align: center;
   transition: 0.5s;
   background-size: 200% auto;
 }
+
+#fBtn {
+  width: 50px;
+  height: fit-content;
+  font-size: 21px;
+  color: aliceblue;
+  margin: 3px;
+  /* padding: 8px; */
+  background: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+  border: 2px solid aliceblue;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+}
+
+#cBtn {
+  width: 50px;
+  height: fit-content;
+  font-size: 21px;
+  color: aliceblue;
+  margin: 3px;
+  /* padding: 8px; */
+  background: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+}
+
 .alignLeft {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
+
 #currentTemp {
   font-size: 50px;
 }
+
 .col-6 {
-text-align: center;
+  text-align: center;
 }
+
 .tempCont {
   margin: 20px;
   width: 100%;
@@ -135,18 +185,21 @@ text-align: center;
   text-align: center;
   justify-content: space-evenly;
 }
+
 .tempNumCont {
   width: fit-content;
   margin: 5px;
   border: 2px solid white;
   border-radius: 15px;
 }
+
 .tempExtraNumCont {
   width: fit-content;
   margin: 5px;
   border: 2px solid white;
   border-radius: 15px;
 }
+
 .tempExtraCont {
   margin: 0;
   width: 100%;
@@ -154,12 +207,14 @@ text-align: center;
   text-align: center;
   justify-content: space-evenly;
 }
+
 #tempActual {
-    color: aliceblue;
-    border-radius: 15px;
-    width: 50px;
-    height: 35px;
+  color: aliceblue;
+  border-radius: 15px;
+  width: 50px;
+  height: 35px;
 }
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -174,64 +229,68 @@ footer {
   text-align: center;
   padding-top: 10px;
 }
+
 #page-container {
   position: relative;
   min-height: 100vh;
 }
+
 #spanFoot {
   margin-left: 35%;
 }
+
 button:hover {
-    background-position: right center;
-    box-shadow: 0 0 12px #eee;
+  background-position: right center;
+  box-shadow: 0 0 12px #eee;
 }
+
 button:active {
   transform: scale(1.1);
 }
-.card-con
-{
-    font-family: 'Open Sans', sans serif;
-    font-weight: bold;
-    border-radius: 10px;
-    perspective: 1400px;
+
+.card-con {
+  font-family: 'Open Sans', sans serif;
+  font-weight: bold;
+  border-radius: 10px;
+  perspective: 1400px;
 }
 
-.crd
-{
-    position: relative;
-    transform-style: preserve-3d;
+.crd {
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 .front,
-.back
-{
-    backface-visibility: hidden;
+.back {
+  backface-visibility: hidden;
 }
 
-.front
-{
-    color: #fff;
+.front {
+  color: #fff;
 }
 
-.back
-{
-    transform: rotateY(180deg);
+.back {
+  transform: rotateY(180deg);
 }
 
 @media only screen and (max-width: 600px) {
   #navCont {
     display: none;
   }
+
   #appCont {
     width: 100%;
   }
+
   #appTop {
     margin-top: 15px;
     width: 100%;
   }
+
   #appBottom {
     width: 100%;
   }
+
   footer {
     display: none;
   }

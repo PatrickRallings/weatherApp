@@ -1,8 +1,11 @@
 const searchBtn = document.querySelector("#searchBtn");
+const fBtn = document.querySelector("#fBtn");
+const cBtn = document.querySelector("#cBtn");
 const appBottom = document.querySelector("#appBottom");
 
 const loc = document.querySelector("#location");
 const date = document.querySelector("#date");
+const day = document.querySelector("#day");
 const degreeBtn = document.querySelector("#degreeBtn");
 
 const currentTemp = document.querySelector("#currentTemp");
@@ -91,7 +94,8 @@ const backgroundObj = {
 
 const currentFetch = (units, degrees) => {
   let cityVal = document.querySelector("input").value;
-  date.innerHTML = `<em>${currentDay}, ${today}</em>`;
+  day.innerHTML = `<em>${currentDay}</em>`;
+  date.innerHTML = `<em>${today}</em>`;
   if (cityVal === "") {
     linkVal = `q=Charlotte,us`;
   } else if (parseInt(cityVal) === Number) {
@@ -111,7 +115,8 @@ const currentFetch = (units, degrees) => {
       console.log(backgroundImg);
       appBottom.style.backgroundImage = `url('${backgroundImg}')`;
       currentTemp.innerHTML =
-        Math.round(json.main.temp) + `<sup style='font-size: 30px;'>${degrees}</sup>`;
+        Math.round(json.main.temp) +
+        `<sup style='font-size: 30px;'>${degrees}</sup>`;
       currentHigh.innerHTML =
         Math.round(json.main.temp_max) +
         `<sup style='font-size: 20px;'>${degrees}</sup>`;
@@ -130,7 +135,7 @@ const currentFetch = (units, degrees) => {
       let lat = json.coord.lat;
       let lon = json.coord.lon;
       fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=imperial&appid=dba94717f4d86654f333b634ebb619f4`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=${units}&appid=dba94717f4d86654f333b634ebb619f4`
       )
         .then((response) => response.json())
         .then((futJson) => {
@@ -179,11 +184,13 @@ const flip = (target) => {
   });
 };
 
-currentFetch('imperial', '&#176');
+currentFetch("imperial", "&#176");
 
 searchBtn.addEventListener("click", function () {
   flip(crd);
-  setTimeout(currentFetch, 500);
+  setTimeout(function () {
+    currentFetch("imperial", "&#176");
+  }, 500);
 });
 
 document.querySelector("input").addEventListener("keyup", function (event) {
@@ -191,4 +198,16 @@ document.querySelector("input").addEventListener("keyup", function (event) {
     console.log("keyup test");
     document.getElementById("searchBtn").click();
   }
+});
+
+fBtn.addEventListener("click", function () {
+  currentFetch("imperial", "&#176");
+  fBtn.style.border = "2px solid aliceblue";
+  cBtn.style.border = "none";
+});
+
+cBtn.addEventListener("click", function () {
+  currentFetch("metric", "&#176");
+  cBtn.style.border = "2px solid";
+  fBtn.style.border = "none";
 });
