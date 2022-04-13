@@ -1,10 +1,14 @@
 {
   "name": "weatherapp",
   "version": "1.0.0",
-  "description": "Weather application",
+  "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["html"]
   },
   "repository": {
     "type": "git",
@@ -16,9 +20,7 @@
     "url": "https://github.com/PatrickRallings/weatherApp/issues"
   },
   "homepage": "https://github.com/PatrickRallings/weatherApp#readme",
-  "dependencies": {
-    "express": "^4.17.3",
-    "nodemon": "^2.0.15",
-    "random-zipcode": "^1.0.2"
+  "devDependencies": {
+    "jest": "^27.5.1"
   }
 }
