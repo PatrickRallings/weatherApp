@@ -212,4 +212,4 @@ cBtn.addEventListener("click", function () {
   fBtn.style.border = "none";
 });
 
-export {currentFetch, flip}
+// export {currentFetch, flip}
